@@ -31,29 +31,48 @@
 
 ---
 
-## 📦 Local Development
+## 📦 Node.js Setup & Local Execution
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/<your-username>/arthanivesh-financial-research.git
-   cd arthanivesh-financial-research
-   ```
+### 1. Install Node.js
+If you don't have Node.js installed on your system:
+- **Windows / macOS**: Download and run the official installer from [nodejs.org](https://nodejs.org) (Recommended: LTS v20 or v22).
+- **Linux (Ubuntu/Debian)**:
+  ```bash
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  ```
+- **Verify installation**:
+  ```bash
+  node -v   # Should output v20.x or v22.x
+  npm -v    # Should output 10.x or higher
+  ```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### 2. Clone & Install Dependencies
+```bash
+git clone https://github.com/<your-username>/arthanivesh-financial-research.git
+cd arthanivesh-financial-research
+npm install
+```
 
-3. **Start local dev server:**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+### 3. Run the Application
 
-4. **Build production bundle:**
-   ```bash
-   npm run build
-   ```
+- **Option A: Quick Frontend Dev Server (Vite)**
+  ```bash
+  npm run dev
+  ```
+  Runs at [http://localhost:3000](http://localhost:3000)
+
+- **Option B: Full-Stack Node.js Express Server (`server.ts`)**
+  ```bash
+  npm run dev:server
+  ```
+  Starts Node.js Express with Vite middleware and `/api/*` endpoints.
+
+- **Option C: Production Build & Node.js Production Server**
+  ```bash
+  npm run build
+  npm start
+  ```
 
 ---
 
