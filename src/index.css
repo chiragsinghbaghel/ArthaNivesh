@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* LIGHT / WHITE MODE GLOBAL STYLING RULES              */
+/* ---------------------------------------------------- */
+html:not(.dark) {
+  color-scheme: light;
+}
+
+html:not(.dark) body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Background surfaces */
+html:not(.dark) .bg-slate-950 {
+  background-color: #ffffff;
+}
+
+html:not(.dark) .bg-slate-900 {
+  background-color: #ffffff;
+}
+
+html:not(.dark) .bg-slate-900\/40,
+html:not(.dark) .bg-slate-900\/50,
+html:not(.dark) .bg-slate-900\/60,
+html:not(.dark) .bg-slate-900\/70,
+html:not(.dark) .bg-slate-900\/80,
+html:not(.dark) .bg-slate-900\/90 {
+  background-color: #f8fafc;
+}
+
+html:not(.dark) .bg-slate-950\/60,
+html:not(.dark) .bg-slate-950\/80,
+html:not(.dark) .bg-slate-950\/85,
+html:not(.dark) .bg-slate-950\/90,
+html:not(.dark) .bg-slate-950\/95 {
+  background-color: #ffffff;
+}
+
+/* Subtle inner panel backgrounds */
+html:not(.dark) .bg-slate-950\/40 {
+  background-color: #f1f5f9;
+}
+
+/* Hairline Borders */
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-800\/80,
+html:not(.dark) .border-slate-800\/60,
+html:not(.dark) .border-slate-800\/40 {
+  border-color: #e2e8f0;
+}
+
+html:not(.dark) .border-slate-700,
+html:not(.dark) .border-slate-700\/80 {
+  border-color: #cbd5e1;
+}
+
+/* Typography contrast adjustments */
+html:not(.dark) .text-white {
+  color: #0f172a;
+}
+
+html:not(.dark) .text-slate-100 {
+  color: #0f172a;
+}
+
+html:not(.dark) .text-slate-200 {
+  color: #1e293b;
+}
+
+html:not(.dark) .text-slate-300 {
+  color: #334155;
+}
+
+html:not(.dark) .text-slate-400 {
+  color: #64748b;
+}
+
+html:not(.dark) .text-slate-500 {
+  color: #64748b;
+}
+
+/* Hover surfaces */
+html:not(.dark) .hover\:bg-slate-900:hover,
+html:not(.dark) .hover\:bg-slate-800:hover,
+html:not(.dark) .hover\:bg-slate-800\/80:hover,
+html:not(.dark) .hover\:bg-slate-800\/60:hover,
+html:not(.dark) .hover\:bg-slate-800\/40:hover {
+  background-color: #f1f5f9;
+}
+
+html:not(.dark) .hover\:text-white:hover {
+  color: #0f172a;
+}
+
+html:not(.dark) .hover\:border-slate-700:hover,
+html:not(.dark) .hover\:border-slate-500:hover {
+  border-color: #94a3b8;
+}
+
+/* Cards & Elevated Containers */
+html:not(.dark) .shadow-lg,
+html:not(.dark) .shadow-xl,
+html:not(.dark) .shadow-2xl {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+}
+
+/* Keep Ticker Bar high-contrast in light mode */
+html:not(.dark) .bg-slate-950.border-b.text-xs.py-1\.5 {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+html:not(.dark) .bg-slate-950.border-b.text-xs.py-1\.5 .text-slate-200,
+html:not(.dark) .bg-slate-950.border-b.text-xs.py-1\.5 .text-slate-100 {
+  color: #f8fafc;
+}
+html:not(.dark) .bg-slate-950.border-b.text-xs.py-1\.5 .border-slate-800\/60 {
+  border-color: #1e293b;
+}
+
+/* Form inputs in light mode */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) select:focus,
+html:not(.dark) textarea:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 1px #10b981;
+}
+
+/* Light mode modals backdrop */
+html:not(.dark) .bg-slate-950\/80,
+html:not(.dark) .bg-slate-950\/85,
+html:not(.dark) .bg-slate-950\/90 {
+  background-color: rgba(15, 23, 42, 0.65);
+}
+
+/* ---------------------------------------------------- */
+/* DARK MODE BASE RULES                                 */
+/* ---------------------------------------------------- */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #090d16;
+  color: #f1f5f9;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+/* Keyframes for subtle live ticker animation */
+@keyframes ticker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}

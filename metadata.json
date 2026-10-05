@@ -1,0 +1,6 @@
+{
+  "name": "ArthaNivesh Financial Research",
+  "description": "Independent Indian stock market research, technical & fundamental equity analysis, derivatives strategies, and compliance-driven advisory services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
